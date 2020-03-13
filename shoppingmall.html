@@ -1,0 +1,75 @@
+<html>
+<head>
+    <title></title>
+     <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- JS -->   
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <style>
+      .mytitle {
+        color: white;
+        text-align: center;
+        background-image: url('https://i.pinimg.com/564x/c7/59/ba/c759ba77cc9c139a4fdb229210f7edb3.jpg');
+        background-size: cover;
+        background-position: center;
+        width: 400px;
+        height: 300px;
+        border-radius: 10px;
+
+        /* display flex를 쓸 때엔 아래 네 줄이 항상 묶여 다닙니다. */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+      }
+
+      .mytitle > h1 {
+        margin: 0 0 5px 0;
+      }
+
+      .mytitle > h5 {
+        margin: 5px 0 0 0;
+      }
+
+      .wrap {
+        width: 300px;
+        margin: 50px auto;
+      }
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+      <div class="mytitle">
+        <h1>SHOP NOW</h1>
+        
+      </div>
+      <p>
+        <h3>Every cloth you want</h3>
+        <h6>spring sale!!</h6>
+        </p>
+        <div>
+        <p>
+        <input type="주문자이름" id="inputname" class="form-control" placeholder="주문자이름" required="" autofocus="">
+        
+        <input type="주소" id="inputaddress" class="form-control" placeholder="주소" required="" autofocus="">
+        <input type="전화번호" id="inputphonenum" class="form-control" placeholder="전화번호" required="" autofocus="">
+            </p>
+            <select class="custom-select d-block w-100" id="state" required="">
+                <option value="">수량</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+              </select>
+              </div>
+      
+      <button class="mybtn">주문하기</button>
+      
+    </div>
+</body>
+</html>
