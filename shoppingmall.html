@@ -1,13 +1,74 @@
 <html>
-<head>
-    <title></title>
-     <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- JS -->   
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <title></title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+
+    <script type="text/javascript">
+    function isCellphone(p) {
+        let regExp = /^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})[-][0-9]{3,4}[-][0-9]{4}$/;
+        return regExp.test(p);
+      }
+      
+
+      function orderformat() {
+        let name = $('#inputname').val();
+        let address = $('#inputaddress').val();
+        let phone = $('#inputphonenum').val();
+        let choose = $('#state').val();
+
+        if (name == ''){
+          alert('이름을 입력해주세요')
+          $('#inputname').focus()
+          return
+        } else if (address == ''){
+          alert('주소를 입력해주세요')
+          $('#inputaddress').focus()
+          return
+        } 
+        
+          else if (choose == ''){
+          alert('수량을 입력해주세요')
+          $('#state').focus()
+          return
+        }
+        else if (phone == ''){
+          alert('전화번호를 입력해주세요')
+          $('#phonenum').focus()
+          return
+        } 
+          else if (!isCellphone(phone)){
+            alert('휴대폰 입력 형식 오류 \n 010-0000-0000으로 입력해주세요!')
+            return
+          }
+      }
+      
+
+
+    
+
+      </script>
     <style>
       .mytitle {
         color: white;
@@ -24,7 +85,6 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        
       }
 
       .mytitle > h1 {
@@ -37,39 +97,60 @@
 
       .wrap {
         width: 400px;
-        margin:70px auto;
+        margin: 70px auto;
       }
-
+      
+       
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="wrap">
       <div class="mytitle">
         <h1>SHOP NOW</h1>
-        
       </div>
-      <p>
-        <h3>Every cloth you want</h3>
-        <h6>spring sale!!</h6>
-        </p>
-        <div>
-        <p>
-        <input type="주문자이름" id="inputname" class="form-control" placeholder="주문자이름" required="" autofocus="">
+      <h3>Every cloth you want</h3>
+      <h6>spring sale!!</h6>
+      <div>
         
-        <input type="주소" id="inputaddress" class="form-control" placeholder="주소" required="" autofocus="">
-        <input type="전화번호" id="inputphonenum" class="form-control" placeholder="전화번호" required="" autofocus="">
-            </p>
-            <select class="custom-select d-block w-100" id="state" required="">
-                <option value="">수량</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-              </select>
-              </div>
-      
-      <button class="mybtn">주문하기</button>
-      
+          <input
+            type="주문자이름"
+            id="inputname"
+            class="form-control"
+            placeholder="주문자이름"
+            required=""
+            autofocus=""
+          />
+
+          <input
+            type="주소"
+            id="inputaddress"
+            class="form-control"
+            placeholder="주소"
+            required=""
+            autofocus=""
+          />
+          
+        
+        <select class="custom-select d-block w-100" id="state" required="">
+          <option value="">수량</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+        </select>
+
+        <input
+            type="전화번호"
+            id="inputphonenum"
+            class="form-control"
+            placeholder="전화번호"
+            required=""
+            autofocus=""
+          />
+
+      </div>
+
+      <button onclick = "orderformat()" class="mybtn">주문하기</button>
     </div>
-</body>
+  </body>
 </html>
